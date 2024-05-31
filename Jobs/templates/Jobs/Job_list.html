@@ -1,0 +1,18 @@
+{% extends "base_generic.html" %}
+{% block content %}
+  <h2>Jobs List</h2>
+  <a href="{% url 'job-create' %}">Create New Job</a>
+  <ul>
+    {% for job in jobs %}
+      <li>
+        <a href="{% url 'job-detail' job.pk %}">{{ job.title }}</a>
+        <p>{{ job.description }}</p>
+        <small>Posted by {{ job.posted_by }} on {{ job.created_at }}</small>
+        {% if job.posted_by == user %}
+          <a href="{% url 'job-update' job.pk %}">Edit</a>
+          <a href="{% url 'job-delete' job.pk %}">Delete</a>
+        {% endif %}
+      </li>
+    {% endfor %}
+  </ul>
+{% endblock %}
