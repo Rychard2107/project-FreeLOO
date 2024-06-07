@@ -68,6 +68,15 @@ AUTHENTICATION_BACKENDS = (
 
 SITE_ID = 1
 
+# Configurações de email
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'freelooofc@gmail.com'
+EMAIL_HOST_PASSWORD = '12a12b12c'
+DEFAULT_FROM_EMAIL = 'freelooofc@gmail.com'
+
 # Configurações do django-allauth
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_USERNAME_REQUIRED = False
